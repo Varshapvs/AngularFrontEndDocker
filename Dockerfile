@@ -17,10 +17,10 @@ RUN npm install
 COPY . ./
 
 # Arguments
-ARG configuration=production
+ARG configuration=AngularDocker
 
 # Build the application
-RUN npm run build -- --outputPath=./dist/out --configuration $configuration
+RUN npm run build --outputPath=./dist/out --configuration $configuration
 
 #### Stage 2, use the compiled app, ready for production with Nginx
 FROM nginx
